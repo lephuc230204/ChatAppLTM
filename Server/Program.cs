@@ -7,6 +7,11 @@ using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading;
+
+// tạo server, tạo danh sách client, tạo endpoint socket 
+// liên kết socket với endpoint, thông báo server đã chạy thành công hay không
+// tạo luồng nghe các clinet khi họ kết nối, giữ console mở để server tiếp tục chạy và k kết thúc ngay lập tức, nhận dữ liệu từ client
+// đóng kết nối để tắt server
 class Server
 {
     static Socket server;
@@ -26,6 +31,7 @@ class Server
         {
             // tạo 1 luồng đợi client kết nối
             server.Bind(ip);
+
         }
         catch (SocketException e)
         {
