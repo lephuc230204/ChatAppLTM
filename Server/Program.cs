@@ -7,7 +7,6 @@ using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading;
-//Tín push code Server
 class Server
 {
     static Socket server;
@@ -27,7 +26,6 @@ class Server
         {
             // tạo 1 luồng đợi client kết nối
             server.Bind(ip);
-
         }
         catch (SocketException e)
         {
