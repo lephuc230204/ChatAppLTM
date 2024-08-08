@@ -8,6 +8,8 @@ using System.Threading;
 using System.Windows.Forms;
 using System;
 
+//Tuấn push code connect và disconnect
+
 namespace ChatApp
 {
     public partial class GroupChat : Form
@@ -50,7 +52,7 @@ namespace ChatApp
             listen.Start();
             client.Send(Serialize(User.UserName + " đã tham gia phòng chat."));
         }
-
+        //feat: add connection to server
         // đóng kết nối hiện thời
         void CloseConnection()
         {

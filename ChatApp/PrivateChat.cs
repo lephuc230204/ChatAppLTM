@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//Thái push code backgroundWorker1_DoWork và backgroundWorker2_DoWork
 
 namespace ChatApp
 {
