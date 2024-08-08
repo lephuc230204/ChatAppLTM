@@ -69,7 +69,7 @@ class Server
         // bắt đầu thread
         listen.Start();
 
-        Console.ReadLine(); // Keep the console open
+        Console.ReadLine(); // giữ cho console mở
     }
 
 
