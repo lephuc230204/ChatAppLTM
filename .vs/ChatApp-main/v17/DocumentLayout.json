@@ -1,0 +1,128 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Laptrinhmang\\ChatApp-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\GroupChat.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ChatApp\\GroupChat.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\GroupChat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ChatApp\\GroupChat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\PrivateChat.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ChatApp\\PrivateChat.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\PrivateChat.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ChatApp\\PrivateChat.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\App.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ChatApp\\App.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\PrivateChat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ChatApp\\PrivateChat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GroupChat.Designer.cs",
+              "DocumentMoniker": "D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\GroupChat.Designer.cs",
+              "RelativeDocumentMoniker": "ChatApp\\GroupChat.Designer.cs",
+              "ToolTip": "D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\GroupChat.Designer.cs",
+              "RelativeToolTip": "ChatApp\\GroupChat.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T12:57:36.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PrivateChat.Designer.cs",
+              "DocumentMoniker": "D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\PrivateChat.Designer.cs",
+              "RelativeDocumentMoniker": "ChatApp\\PrivateChat.Designer.cs",
+              "ToolTip": "D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\PrivateChat.Designer.cs",
+              "RelativeToolTip": "ChatApp\\PrivateChat.Designer.cs",
+              "ViewState": "AQIAABQAAABg//////8kwLYAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T12:52:39.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PrivateChat.resx",
+              "DocumentMoniker": "D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\PrivateChat.resx",
+              "RelativeDocumentMoniker": "ChatApp\\PrivateChat.resx",
+              "ToolTip": "D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\PrivateChat.resx",
+              "RelativeToolTip": "ChatApp\\PrivateChat.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-08-20T12:52:15.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.config",
+              "DocumentMoniker": "D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\App.config",
+              "RelativeDocumentMoniker": "ChatApp\\App.config",
+              "ToolTip": "D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\App.config",
+              "RelativeToolTip": "ChatApp\\App.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-08-19T13:14:36.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PrivateChat.cs",
+              "DocumentMoniker": "D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\PrivateChat.cs",
+              "RelativeDocumentMoniker": "ChatApp\\PrivateChat.cs",
+              "ToolTip": "D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\PrivateChat.cs",
+              "RelativeToolTip": "ChatApp\\PrivateChat.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGUAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T12:54:24.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GroupChat.cs",
+              "DocumentMoniker": "D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\GroupChat.cs",
+              "RelativeDocumentMoniker": "ChatApp\\GroupChat.cs",
+              "ToolTip": "D:\\Laptrinhmang\\ChatApp-main\\ChatApp\\GroupChat.cs",
+              "RelativeToolTip": "ChatApp\\GroupChat.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAOsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-16T15:08:08.792Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
