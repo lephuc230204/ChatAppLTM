@@ -8,7 +8,7 @@ namespace ChatApp
     public partial class LoginForm : Form
     {
         // Chuỗi kết nối tới cơ sở dữ liệu PostgreSQL
-        private string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=lam1782004;Database=chatapp";
+        private string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=thanhmaso1;Database=chatapp";
 
         // Hàm khởi tạo cho form đăng nhập
         public LoginForm()
@@ -34,7 +34,7 @@ namespace ChatApp
                 Trace.WriteLine("User with username: " + User.UserName);
                 Trace.WriteLine("User with private port: " + User.PrivatePort);
 
-                // Chuyển đến form chọn phòng chat
+                // Chuyển đến form chọn phòng chat (selectRoom)
                 SelectChatRoom selectChatRoom = new SelectChatRoom();
                 this.Hide();  // Ẩn form đăng nhập hiện tại
                 selectChatRoom.ShowDialog();  // Hiển thị form chọn phòng chat
@@ -46,7 +46,7 @@ namespace ChatApp
             }
         }
 
-        // Hàm kiểm tra thông tin đăng nhập
+        // Hàm kiểm tra thông tin đăng nhập được lưu trên database
         private bool ValidateLogin(string username, string password)
         {
             // Kết nối tới cơ sở dữ liệu PostgreSQL
