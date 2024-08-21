@@ -39,21 +39,25 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnConnect = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
+            this.btnSendFile = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // listTextMessages
             // 
-            this.listTextMessages.Location = new System.Drawing.Point(17, 46);
+            this.listTextMessages.Location = new System.Drawing.Point(19, 58);
+            this.listTextMessages.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listTextMessages.Name = "listTextMessages";
-            this.listTextMessages.Size = new System.Drawing.Size(453, 338);
+            this.listTextMessages.Size = new System.Drawing.Size(509, 422);
             this.listTextMessages.TabIndex = 6;
             this.listTextMessages.Text = "";
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(383, 390);
+            this.btnSend.Location = new System.Drawing.Point(431, 522);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(87, 51);
+            this.btnSend.Size = new System.Drawing.Size(99, 30);
             this.btnSend.TabIndex = 5;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
@@ -61,10 +65,11 @@
             // 
             // txtMessage
             // 
-            this.txtMessage.Location = new System.Drawing.Point(17, 390);
+            this.txtMessage.Location = new System.Drawing.Point(19, 488);
+            this.txtMessage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(359, 51);
+            this.txtMessage.Size = new System.Drawing.Size(403, 63);
             this.txtMessage.TabIndex = 4;
             // 
             // backgroundWorker1
@@ -78,40 +83,43 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 21);
+            this.label1.Location = new System.Drawing.Point(20, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 16);
+            this.label1.Size = new System.Drawing.Size(75, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Your port";
             // 
             // yPort
             // 
-            this.yPort.Location = new System.Drawing.Point(85, 18);
+            this.yPort.Location = new System.Drawing.Point(96, 22);
+            this.yPort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.yPort.Name = "yPort";
-            this.yPort.Size = new System.Drawing.Size(64, 22);
+            this.yPort.Size = new System.Drawing.Size(72, 26);
             this.yPort.TabIndex = 8;
             // 
             // clPort
             // 
-            this.clPort.Location = new System.Drawing.Point(315, 18);
+            this.clPort.Location = new System.Drawing.Point(354, 22);
+            this.clPort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.clPort.Name = "clPort";
-            this.clPort.Size = new System.Drawing.Size(61, 22);
+            this.clPort.Size = new System.Drawing.Size(68, 26);
             this.clPort.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(243, 21);
+            this.label2.Location = new System.Drawing.Point(273, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 16);
+            this.label2.Size = new System.Drawing.Size(81, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Client port";
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(383, 15);
+            this.btnConnect.Location = new System.Drawing.Point(431, 19);
+            this.btnConnect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(87, 28);
+            this.btnConnect.Size = new System.Drawing.Size(98, 35);
             this.btnConnect.TabIndex = 11;
             this.btnConnect.Text = "Connect";
             this.btnConnect.UseVisualStyleBackColor = true;
@@ -119,19 +127,35 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(155, 15);
+            this.btnStart.Location = new System.Drawing.Point(174, 19);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(87, 28);
+            this.btnStart.Size = new System.Drawing.Size(98, 35);
             this.btnStart.TabIndex = 12;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
+            // btnSendFile
+            // 
+            this.btnSendFile.Location = new System.Drawing.Point(431, 488);
+            this.btnSendFile.Name = "btnSendFile";
+            this.btnSendFile.Size = new System.Drawing.Size(98, 34);
+            this.btnSendFile.TabIndex = 13;
+            this.btnSendFile.Text = "Send file";
+            this.btnSendFile.UseVisualStyleBackColor = true;
+            this.btnSendFile.Click += new System.EventHandler(this.btnSendFile_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // PrivateChat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 453);
+            this.ClientSize = new System.Drawing.Size(542, 566);
+            this.Controls.Add(this.btnSendFile);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.clPort);
@@ -141,6 +165,7 @@
             this.Controls.Add(this.listTextMessages);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtMessage);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PrivateChat";
             this.Text = "PrivateChat";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PrivateChat_FormClosed);
@@ -162,5 +187,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Button btnSendFile;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

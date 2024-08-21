@@ -98,17 +98,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GroupChat.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GroupChat.Designer.cs">
       <DependentUpon>GroupChat.cs</DependentUpon>
     </Compile>
-    <Compile Include="OpenForm.cs">
+    <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OpenForm.Designer.cs">
-      <DependentUpon>OpenForm.cs</DependentUpon>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PrivateChat.cs">
       <SubType>Form</SubType>
@@ -128,8 +134,8 @@
     <EmbeddedResource Include="GroupChat.resx">
       <DependentUpon>GroupChat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OpenForm.resx">
-      <DependentUpon>OpenForm.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrivateChat.resx">
       <DependentUpon>PrivateChat.cs</DependentUpon>
@@ -143,6 +149,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectChatRoom.resx">
       <DependentUpon>SelectChatRoom.cs</DependentUpon>
     </EmbeddedResource>

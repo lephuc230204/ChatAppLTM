@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//Thái push code backgroundWorker1_DoWork và backgroundWorker2_DoWork
+using System.Collections.Generic;
 
 namespace ChatApp
 {
@@ -17,23 +17,33 @@ namespace ChatApp
         public string receive;
         public string TextToSend;
         public bool isConnected = false;
+        private OpenFileDialog openFileDialog;
 
         public PrivateChat()
         {
             InitializeComponent();
             yPort.Text = User.PrivatePort.ToString();
+            openFileDialog = new OpenFileDialog();
         }
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            if (txtMessage.Text != "")
+            if (!string.IsNullOrEmpty(txtMessage.Text))
             {
-                TextToSend =User.UserName+ ": " + txtMessage.Text;
-                backgroundWorker2.RunWorkerAsync();
+                string message = User.UserName + ": " + ThayTheBangIcon(txtMessage.Text);
+                SendMessage(message);
             }
             txtMessage.Text = "";
         }
 
+        private string ThayTheBangIcon(string text)
+        {
+            foreach (var icon in Icons.IconMap)
+            {
+                text = text.Replace(icon.Key, icon.Value);
+            }
+            return text;
+        }
 
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
@@ -41,36 +51,92 @@ namespace ChatApp
             {
                 try
                 {
-                    receive = STR.ReadLine();
-                    this.listTextMessages.Invoke(new MethodInvoker(delegate ()
+                    NetworkStream networkStream = client.GetStream();
+                    BinaryReader reader = new BinaryReader(networkStream);
+
+                    string dataType = reader.ReadString();
+
+                    if (dataType == "message")
                     {
-                        listTextMessages.AppendText(receive + "\n");
-                    }));
-                    receive = "";
+                        string message = reader.ReadString();
+                        this.listTextMessages.Invoke(new MethodInvoker(delegate ()
+                        {
+                            listTextMessages.AppendText(message + "\n");
+                        }));
+                    }
+                    else if (dataType == "file")
+                    {
+                        int fileLength = reader.ReadInt32();
+                        byte[] fileBytes = reader.ReadBytes(fileLength);
+
+                        string tempFileName = Path.GetFileNameWithoutExtension(Path.GetTempFileName()) + Path.GetExtension("received_file");
+                        string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), tempFileName);
+
+                        File.WriteAllBytes(filePath, fileBytes);
+                        string message = User.UserName + " đã nhận tệp: " + Path.GetFileName(filePath);
+                        this.listTextMessages.Invoke(new MethodInvoker(delegate ()
+                        {
+                            listTextMessages.AppendText(message + "\n");
+                        }));
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message.ToString());
+                    MessageBox.Show("Error receiving data: " + ex.Message);
+                    client.Close();
                 }
             }
         }
 
+
+
         private void backgroundWorker2_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            SendMessage(TextToSend);
+        }
+
+        private void SendMessage(string message)
         {
             if (client.Connected)
             {
-                STW.WriteLine(TextToSend);
-                this.listTextMessages.Invoke(new MethodInvoker(delegate ()
+                try
                 {
-                    listTextMessages.AppendText( TextToSend + "\n");
-                }));
+                    NetworkStream networkStream = client.GetStream();
+                    BinaryWriter writer = new BinaryWriter(networkStream);
+
+                    if (message.Contains("đã gửi tệp:"))
+                    {
+                        string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "received_file");
+                        if (File.Exists(filePath))
+                        {
+                            byte[] fileBytes = File.ReadAllBytes(filePath);
+                            writer.Write("file");
+                            writer.Write(fileBytes.Length);
+                            writer.Write(fileBytes);
+                        }
+                    }
+                    else
+                    {
+                        writer.Write("message");
+                        writer.Write(message);
+                    }
+
+                    this.listTextMessages.Invoke(new MethodInvoker(delegate ()
+                    {
+                        listTextMessages.AppendText(message + "\n");
+                    }));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error sending message: " + ex.Message);
+                }
             }
             else
             {
                 MessageBox.Show("Send failed!");
             }
-            backgroundWorker2.CancelAsync();
         }
+
         void StartServer()
         {
             TcpListener listener = new TcpListener(IPAddress.Any, int.Parse(yPort.Text));
@@ -90,7 +156,6 @@ namespace ChatApp
                         listTextMessages.AppendText("Client connected\n");
                     }));
                 }
-
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message.ToString());
@@ -121,7 +186,7 @@ namespace ChatApp
             {
                 client.Connect(IP_End);
                 TextToSend = User.UserName + " joined the chat";
-                backgroundWorker2.RunWorkerAsync();
+                SendMessage(TextToSend);
                 STW = new StreamWriter(client.GetStream());
                 STR = new StreamReader(client.GetStream());
                 STW.AutoFlush = true;
@@ -133,12 +198,12 @@ namespace ChatApp
                 MessageBox.Show(ex.Message.ToString());
             }
             listTextMessages.AppendText("Connected to server\n");
-
         }
+
         void Disconnect()
-        {   
+        {
             TextToSend = User.UserName + " left the chat";
-            backgroundWorker2.RunWorkerAsync();
+            SendMessage(TextToSend);
             client.Close();
             STR.Close();
             STW.Close();
@@ -156,5 +221,54 @@ namespace ChatApp
         {
             StartServer();
         }
+
+        private void btnSendFile_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                SendFile(filePath);
+            }
+        }
+
+        private void SendFile(string filePath)
+        {
+            if (client.Connected)
+            {
+                try
+                {
+                    byte[] fileBytes = File.ReadAllBytes(filePath);
+                    NetworkStream networkStream = client.GetStream();
+                    BinaryWriter writer = new BinaryWriter(networkStream);
+
+                    writer.Write("file");
+                    writer.Write(fileBytes.Length);
+                    writer.Write(fileBytes);
+
+                    TextToSend = User.UserName + " đã gửi tệp: " + Path.GetFileName(filePath);
+                    SendMessage(TextToSend);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error sending file: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Cannot send file. Connection is closed.");
+            }
+        }
+
+    }
+
+    public static class Icons
+    {
+        public static Dictionary<string, string> IconMap = new Dictionary<string, string>
+        {
+            { ":)", "😊" },
+            { ":(", "😞" },
+            { ":D", "😄" },
+            { ";)", "😉" }
+        };
     }
 }
